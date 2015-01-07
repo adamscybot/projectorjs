@@ -1,17 +1,26 @@
+.vjs-poster, .vjs-text-track-display,
+.vjs-loading-spinner, .vjs-big-play-button,
+.vjs-control-bar {
+    z-index: 2;
+}
+
 .projector-wrapper {
     position: relative;
 }
 
 .projector-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     pointer-events: none;
-    z-index: 5;
+    z-index: 1;
 }
 
-video::-webkit-media-controls-panel {
-    z-index:999;
+.projector-overlay-item {
+    position: absolute;
+}
+
+.projector-textbox {
+    background: rgba(0,0,0,0.5);
+    font-size: 20%;
+    padding:20px;
+    color:white;
 }

@@ -19,14 +19,16 @@
 
     var v = videojs("videojs-test").projector();
     v.addOverlay(Projector.TextBox.create({
+        top: '50%',
+        left: '50%',
         timings: [
         {
             min:2,
             max:5,
-            beginOverlay: function(element, curTime, dirty) {
+            beforeBeginOverlay: function(element, curTime, dirty) {
                 console.log("begin",element, curTime, dirty);
             },
-            endOverlay: function(element, curTime, dirty) {
+            beforeEndOverlay: function(element, curTime, dirty) {
                 console.log("end",element, curTime, dirty);
             }
         }
