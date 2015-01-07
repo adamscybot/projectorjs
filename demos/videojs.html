@@ -18,23 +18,26 @@
 
 
     var v = videojs("videojs-test").projector();
-    v.addOverlay(Projector.TextBox.create({
-        top: '50%',
-        left: '50%',
-        timings: [
+    v.addOverlay(
+        Projector.HTMLBox({
+            html: '<p style="color:red;font-size:3em">Hello</p>'
+        }),
         {
-            min:2,
-            max:5,
-            beforeBeginOverlay: function(element, curTime, dirty) {
-                console.log("begin",element, curTime, dirty);
-            },
-            beforeEndOverlay: function(element, curTime, dirty) {
-                console.log("end",element, curTime, dirty);
-            }
+            top: '50%',
+            left: '50%',
+            timings: [
+                {
+                    timing: '0-10',
+                    beforeBeginOverlay: function(element, curTime, dirty) {
+                        console.log("begin",element, curTime, dirty);
+                    },
+                    beforeEndOverlay: function(element, curTime, dirty) {
+                        console.log("end",element, curTime, dirty);
+                    }
+                }
+            ]
         }
-        ],
-        text: "Hello"
-    }));
+    );
 
     </script>
 </body>

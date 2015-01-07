@@ -14,13 +14,21 @@
     z-index: 1;
 }
 
+.projector-overlay-cover {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .projector-overlay-item {
     position: absolute;
 }
 
 .projector-textbox {
-    background: rgba(0,0,0,0.5);
-    font-size: 20%;
-    padding:20px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    font-size: 3em;
+    padding:10px;
     color:white;
 }
