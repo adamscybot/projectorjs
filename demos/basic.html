@@ -13,23 +13,27 @@
     </video>
     <script>
         var v = Projector.init(document.getElementById('video'));
-        v.addOverlay(Projector.HTMLBox.create({
-            top: '50%',
-            left: '50%',
-            timings: [
-                {
-                    min:2,
-                    max:5,
-                    beforeBeginOverlay: function(element, curTime, dirty) {
-                        console.log("begin",element, curTime, dirty);
+        v.addOverlay(
+            Projector.HTMLBox({
+                html: '<p style="color:red;font-size:3em">Hello</p>'
+            }),
+            {
+                top: '50%',
+                left: '50%',
+                timings: [
+                    {
+                        timing: '0-10,15-20',
+                        beforeBeginOverlay: function(element, curTime, dirty) {
+                            console.log("begin",element, curTime, dirty);
+                        },
+                        beforeEndOverlay: function(element, curTime, dirty) {
+                            console.log("end",element, curTime, dirty);
+                        }
                     },
-                    beforeEndOverlay: function(element, curTime, dirty) {
-                        console.log("end",element, curTime, dirty);
-                    }
-                }
-            ],
-            text: "Hello"
-        }));
+
+                ]
+            }
+        );
     </script>
 </body>
 </html>

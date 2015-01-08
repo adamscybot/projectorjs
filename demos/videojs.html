@@ -6,7 +6,7 @@
     <link href="http://vjs.zencdn.net/4.11/video-js.css" rel="stylesheet">
     <script src="http://vjs.zencdn.net/4.11/video.js"></script>
     <script src="../dist/js/projectorjs-0.0.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="../lib/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/styles.css">
 
 </head>
 <body>
@@ -27,14 +27,15 @@
             left: '50%',
             timings: [
                 {
-                    timing: '0-10',
+                    timing: '0-10,15-20',
                     beforeBeginOverlay: function(element, curTime, dirty) {
                         console.log("begin",element, curTime, dirty);
                     },
                     beforeEndOverlay: function(element, curTime, dirty) {
                         console.log("end",element, curTime, dirty);
                     }
-                }
+                },
+
             ]
         }
     );

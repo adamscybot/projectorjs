@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    minifyCSS = require('gulp-minify-css');
 
 var getBundleName = function () {
     var version = require('./package.json').version;
@@ -13,6 +14,9 @@ gulp.task('default', ['js', 'css']);
 
 gulp.task('css', function() {
     gulp.src('./lib/css/styles.css')
+        .pipe(gulp.dest('./dist/css/'))
+        .pipe(rename('styles.min.css'))
+        .pipe(minifyCSS())
         .pipe(gulp.dest('./dist/css/'));
 });
 
