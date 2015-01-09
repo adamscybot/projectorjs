@@ -305,13 +305,13 @@ Builds and returns the DOM element representing the overlay. Override in custom 
 
 #### beginOverlay
 Type: `function`  
-Arguments: `cb<function>`
+Arguments: `cb<function>`, `curTime<integer>`, `dirty<boolean>`
 
 Main function to trigger the overlay "on". Default is to unhide DOM element. Override in custom overlays. Execute the callback when done.
 
 #### endOverlay
 Type: `function`  
-Arguments: `cb<function>`
+Arguments: `cb<function>`, `curTime<integer>`, `dirty<boolean>`
 
 Main function to trigger the overlay "off". Default is to hide DOM element. Override in custom overlays. Execute the callback when done.
 
