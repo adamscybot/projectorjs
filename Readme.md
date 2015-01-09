@@ -224,16 +224,17 @@ If a single integer 'x' is specified, this is processed as a timing that starts 
 Overrides start and end values if set.
 
 #### start
-Type: `integer`  
+Type: `integer|string`  
 Default: `undefined`
 
-The number of seconds elapsed upon which the overlay starts.
+The number of seconds elapsed upon which the overlay starts. Alternatively, an event name such as play or pause. Any event fired on the video element (native or videojs) works.
 
 #### end
-Type: `integer`  
+Type: `integer|string`  
 Default: `undefined`
 
-The number of seconds elapsed upon which the overlay ends.
+The number of seconds elapsed upon which the overlay ends. Alternatively, an event name such as play or pause. Any event fired on the video element (native or videojs) works.
+
 
 #### beforeBeginOverlay
 Type: `function`  
