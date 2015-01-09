@@ -1,0 +1,7 @@
+markdown: redcarpet
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "index"
