@@ -82,9 +82,9 @@ Projector.js uses the [UMD](https://github.com/umdjs/umd) pattern and so should 
 
 A common issue with video overlays is that one overlay blocks events from hitting other overlays that are underneath. E.g, you have 2 overlays that both provide user input, but because one is on top, the other is not accessible.
 
-Projector.js attempts to counter this by assinging the [```pointer-events: none;```](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) CSS property to overlay wrappers (```.projector-overlay```). This allows child elements to be clickable, but the containing overlay div (which covers the whole video) allows events to "pass-through." However, this is a new property and support is limited on older browsers. It is of note that it is unsupported on < IE11.
+Projector.js attempts to counter this by assigning the [```pointer-events: none;```](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) CSS property to overlay wrappers (```.projector-overlay```). This allows child elements to be clickable, but the containing overlay div (which covers the whole video) allows events to "pass-through." However, this is a new property and support is limited on older browsers. It is of note that it is unsupported on < IE11.
 
-A good way to avoid this issue is to keep all individual elements on a seperate overlay. I.e. avoid having 2 seperate divs in a single overlay. This would cause the overlay container to stretch to fit both, introducing transparent white space which would block clicks if on a browser that does not support pointer-events.
+A good way to avoid this issue is to keep all individual elements on a separate overlay. I.e. avoid having 2 separate divs in a single overlay. This would cause the overlay container to stretch to fit both, introducing transparent white space which would block clicks if on a browser that does not support pointer-events.
 
 ### Scaling up videos
 

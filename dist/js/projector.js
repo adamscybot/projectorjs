@@ -21,13 +21,13 @@
     var pCount = 0;
 
     // The projector instance attached to a single video element.
-    var pInstance = function (element, config, vjs) {
+    var pInstance = function (element, options, vjs) {
         vjs = vjs || false;
 
         var that = this;
 
         this.element = element;
-        this.config = config;
+        this.coptions = options;
         this.overlays = [];
         this.vjs = vjs;
 
@@ -59,8 +59,16 @@
             element.projector = this;
         }
 
+
+        // Add overlays already defined in options
+        if (options.overlays) {
+            options.overlays.forEach(function (overlayDefintion) {
+                var overlay = overlayDefintion.overlay;
+                that.addOverlay(overlayDefintion.overlay, overlayDefintion);
+            });
+        }
+
         // When size of player changes, we should set the font size as 1% of width.
-        // TODO: Optionally allow users to use vw/vh units.
         // TODO: Detect video size change beyond full screen.
         element.addEventListener("fullscreenchange", function() {
             var overlays = document.getElementsByClassName('projector-overlay');
@@ -177,23 +185,6 @@
         this.wrapper.insertBefore(div, this.wrapper.childNodes[0]);
 
         return this;
-    };
-
-    // The primary export of the module. Provides init functions.
-    var Projector = {
-        VERSION: '0.1.0',
-        // Given an element or ID, create a new projector instance.
-        init: function (element, options) {
-            if (typeof element === "string") {
-                element = document.getElementById(element);
-            }
-            return new pInstance(element, options);
-        },
-        // Create a new projector instance on top of a videojs instance.
-        initVjs: function (options) {
-            this.projector = new pInstance(this, options, true);
-            return this.projector;
-        }
     };
 
     // Run a function only if target is actually a function.
@@ -351,6 +342,23 @@
 
         return exports;
     })();
+
+    // The primary export of the module. Provides init functions.
+    var Projector = {
+        VERSION: '0.1.0',
+        // Given an element or ID, create a new projector instance.
+        init: function (element, options) {
+            if (typeof element === "string") {
+                element = document.getElementById(element);
+            }
+            return new pInstance(element, options);
+        },
+        // Create a new projector instance on top of a videojs instance.
+        initVjs: function (options) {
+            this.projector = new pInstance(this, options, true);
+            return this.projector;
+        }
+    };
 
     // Register as videojs plugin
     if (vjs) {
