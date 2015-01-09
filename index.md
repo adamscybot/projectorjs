@@ -1,3 +1,4 @@
 ---
+layout: index
 ---
-{% include_relative Readme.html %}
+{% include_relative Readme.md %}
