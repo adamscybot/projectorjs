@@ -61,7 +61,7 @@
 
 
         // Add overlays already defined in options
-        if (options.overlays) {
+        if (options && options.overlays) {
             options.overlays.forEach(function (overlayDefintion) {
                 var overlay = overlayDefintion.overlay;
                 that.addOverlay(overlayDefintion.overlay, overlayDefintion);
