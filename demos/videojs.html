@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videojs demo</title>
+    <link href="http://vjs.zencdn.net/4.11/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/4.11/video.js"></script>
+    <script src="js/projector.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/projectorjs.css">
+
+</head>
+<body>
+    <video width="640" height="264" class="video-js vjs-default-skin" id="videojs-test" controls>
+        <source src="videos/big-buck-bunny_trailer.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <script>
+
+
+    var v = videojs("videojs-test").projector();
+    v.addOverlay(
+        Projector.HTMLBox({
+            html: '<p style="color:red;background:black;height:100%;width:100%;font-size:3em">Hello</p>'
+        }),
+        {
+        
+            top: '50%',
+            left: '50%',
+            width: '30%',
+            height: '30%',
+            timings: [
+                {
+                    timing: '0-10,15-20',
+                    beforeBeginOverlay: function(element, curTime, dirty) {
+                        console.log("begin",element, curTime, dirty);
+                    },
+                    beforeEndOverlay: function(element, curTime, dirty) {
+                        console.log("end",element, curTime, dirty);
+                    }
+                },
+
+            ]
+        }
+    );
+
+    </script>
+</body>
+</html>
