@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Basic demo</title>
-    <script src="../dist/js/projectorjs-0.0.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="../dist/css/styles.css">
+    <script src="../dist/js/projector.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/css/projectorjs.css">
 </head>
 <body>
     <video id="video" controls>
@@ -12,7 +12,7 @@
         Your browser does not support the video tag.
     </video>
     <script>
-        var v = Projector.init(document.getElementById('video'));
+        var v = Projector.init('video');
         v.addOverlay(
             Projector.HTMLBox({
                 html: '<p style="color:red;font-size:3em">Hello</p>'
