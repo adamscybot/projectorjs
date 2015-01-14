@@ -3,7 +3,6 @@
 A small no-dependencies JavaScript library that enables the display of overlays on native HTML5 video elements, or (optionally) video elements powered by [videojs](https://github.com/videojs/video.js/). Overlays can be triggered via time ranges or events. A set of useful overlays is (WIP) included to cover common use cases.
 
 ## Getting Started
-
 ### Raw browser
 
 You need to include both the javascript and css files from the project. Both of these are located in the dist directory.
@@ -406,4 +405,5 @@ var TextBox = (function () {
 To build, use [gulp](https://github.com/gulpjs/gulp/) and simply run `gulp` in the project root.
 
 ## Release History
-- 0.1.0: Initial release
+- 0.1.1: Strip out demos (move to gh-pages) and minor fixes.
+- 0.1.0: Initial release.
