@@ -405,4 +405,5 @@ var TextBox = (function () {
 To build, use [gulp](https://github.com/gulpjs/gulp/) and simply run `gulp` in the project root.
 
 ## Release History
-- 0.1.0: Initial release
+- 0.1.1: Strip out demos (move to gh-pages) and minor fixes.
+- 0.1.0: Initial release.
