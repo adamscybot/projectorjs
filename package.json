@@ -2,7 +2,7 @@
   "name": "projectorjs",
   "version": "0.1.1",
   "description": "A small no-dependencies JavaScript library that enables the display of overlays on native HTML5 video elements, or (optionally) video elements powered by videojs.",
-  "main": "dist/projector.js",
+  "main": "dist/js/projector.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
